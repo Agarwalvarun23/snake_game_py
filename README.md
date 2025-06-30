@@ -35,7 +35,8 @@ README.md          # Project documentation
 ```
 
 ## 🖥️ Screenshot
-(image.png)
+
+![Game Screenshot](game_ss.jpg)
 
 
 ## 📢 About the Developer
