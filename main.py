@@ -16,7 +16,7 @@ pygame.init()
 
 pygame.display.set_caption('Varun ke Saanp')
 game_window = pygame.display.set_mode((window_x,window_y))
-fpd = pygame.time.Clock()
+fps  = pygame.time.Clock()
 snake_position = [100, 50]
 snake_body = [ [100, 50], 
                [90,50],
@@ -58,7 +58,7 @@ while True:
                 change_to = 'LEFT'
             if event.key == pygame.K_RIGHT:
                 change_to = 'RIGHT'
-    if change_to == 'UP' and drection!='DOWN':
+    if change_to == 'UP' and direction!='DOWN':
         direction = 'UP'
     if change_to == 'DOWN' and direction!='UP':
         direction = 'DOWN'
@@ -91,4 +91,11 @@ while True:
     pygame.draw.rect(game_window, white, pygame.Rect(fruit_position[0], fruit_position[1], 10, 10))
     if snake_position[0]<0 or snake_position[0]>window_x-10:
         game_over()
-    if snake_position        
+    if snake_position[1] < 0 or snake_position[1] > window_y-10:
+        game_over() 
+    for block in snake_body[1:]:
+        if snake_position[0] == block[0] and snake_position[1] == block[1]:
+            game_over()
+    show_score(1, white, 'times new roman', 20)                   
+    pygame.display.update()
+    fps.tick(snake_speed)
