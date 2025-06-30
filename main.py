@@ -2,7 +2,7 @@ import pygame
 import random
 import time
 
-s_speed = 15
+snake_speed = 15
 window_x = 720
 window_y = 480
 
@@ -17,4 +17,14 @@ pygame.init()
 pygame.display.set_caption('Varun ke Saanp')
 game_window = pygame.display.set_mode((window_x,window_y))
 fpd = pygame.time.Clock()
-
+snake_position = [100, 50]
+snake_body = [ [100, 50], 
+               [90,50],
+               [80, 50],
+               [70, 50]
+            ]
+fruit_position = [random.randrange(1, (window_x//10))*10,
+                  random.randrange(1, (window_y//10))*10]
+fruit_spawn = True
+direction = 'RIGHT'
+change_to = direction
