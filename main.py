@@ -28,3 +28,15 @@ fruit_position = [random.randrange(1, (window_x//10))*10,
 fruit_spawn = True
 direction = 'RIGHT'
 change_to = direction
+score = 0
+def show_score(choice, color, font, size):
+    score_font = pygame.font.SysFont(font, size)
+    score_surface = score_font.render('Score:'+ str(score), True, color)
+    score_rect = score_surface.get_rect()
+    game_window.blit(score_surface, score_rect)
+
+def game_over():
+    my_font = pygame.font.SysFont('times new roman',50)
+    game_over_surface = my_font.render(
+    'Your score is : ' + str(score), True, red)
+    game_over_rect
